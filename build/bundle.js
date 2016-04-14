@@ -50,9 +50,21 @@
 
 	var _robot2 = _interopRequireDefault(_robot);
 
+	var _app = __webpack_require__(2);
+
+	var _app2 = _interopRequireDefault(_app);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	document.write((0, _robot2.default)("Affirmative", "Francesco!")); // require('./alert.js'); Webpack build first test. Passed... OK!
+	document.write((0, _robot2.default)("Affirmative", "Francesco!"));
+
+	// creating a stylesheet dependency of a JavaScript file. AMAZING!
+
+	// require('./alert.js'); Webpack build first test. Passed... OK!
+
+	var ELEMENT = "\n  <div class=\"element\">\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur laudantium recusandae itaque libero velit minus ex reiciendis veniam. Eligendi modi sint delectus beatae nemo provident ratione maiores, voluptatibus a tempore!</p>\n  </div>\n";
+
+	document.write(ELEMENT);
 
 /***/ },
 /* 1 */
@@ -68,6 +80,12 @@
 	};
 
 	exports.default = greetings;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
