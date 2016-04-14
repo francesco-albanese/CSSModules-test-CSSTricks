@@ -1,7 +1,10 @@
 // require('./alert.js'); Webpack build first test. Passed... OK!
 
 import greetings from './robot.js'
-document.write(greetings("Affirmative", "Francesco!"));
+
+const CONTAINER = document.querySelector('.container');
+
+CONTAINER.insertAdjacentHTML('beforeend' , greetings("Affirmative", "Francesco!"));
 
 // creating a stylesheet dependency of a JavaScript file. AMAZING!
 
@@ -13,4 +16,12 @@ const ELEMENT = `
   </div>
 `
 
-document.write(ELEMENT);
+let webpackTest = `
+  <div class="${styles.webpackTest}">
+    <p>This is another test using webpack to compile and add the styles</p>
+    <p>the div class name should be altered by webpack extract text plugin</p>
+  </div>
+`
+
+CONTAINER.insertAdjacentHTML('beforeend', ELEMENT);
+CONTAINER.insertAdjacentHTML('beforeend', webpackTest);

@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var _robot = __webpack_require__(1);
 
@@ -56,15 +56,18 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	document.write((0, _robot2.default)("Affirmative", "Francesco!"));
+	var CONTAINER = document.querySelector('.container'); // require('./alert.js'); Webpack build first test. Passed... OK!
+
+	CONTAINER.insertAdjacentHTML('beforeend', (0, _robot2.default)("Affirmative", "Francesco!"));
 
 	// creating a stylesheet dependency of a JavaScript file. AMAZING!
 
-	// require('./alert.js'); Webpack build first test. Passed... OK!
+	var ELEMENT = '\n  <div class="' + _app2.default.element + '">\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur laudantium recusandae itaque libero velit minus ex reiciendis veniam. Eligendi modi sint delectus beatae nemo provident ratione maiores, voluptatibus a tempore!</p>\n  </div>\n';
 
-	var ELEMENT = "\n  <div class=\"" + _app2.default.element + "\">\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur laudantium recusandae itaque libero velit minus ex reiciendis veniam. Eligendi modi sint delectus beatae nemo provident ratione maiores, voluptatibus a tempore!</p>\n  </div>\n";
+	var webpackTest = '\n  <div class="' + _app2.default.webpackTest + '">\n    <p>This is another test using webpack to compile and add the styles</p>\n    <p>the div class name should be altered by webpack extract text plugin</p>\n  </div>\n';
 
-	document.write(ELEMENT);
+	CONTAINER.insertAdjacentHTML('beforeend', ELEMENT);
+	CONTAINER.insertAdjacentHTML('beforeend', webpackTest);
 
 /***/ },
 /* 1 */
@@ -86,7 +89,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"element":"app__element___1MmQg"};
+	module.exports = {"element":"app__element___1MmQg","webpackTest":"app__webpackTest___1vOIB"};
 
 /***/ }
 /******/ ]);
