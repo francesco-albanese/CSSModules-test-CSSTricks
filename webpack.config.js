@@ -21,7 +21,8 @@ module.exports = {
       // },
       {
         test: /\.css/,
-        loader: ExtractTextPlugin.extract("css")
+        // the crazy expression below basically will add the generated text at the end of the class name
+        loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'),
       }
     ],
   },
